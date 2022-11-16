@@ -80,7 +80,7 @@ pipeline {
         stage('Upload to Nexus') {
             steps {
                 // Deploy to Nexus
-               nexusPublisher nexusInstanceId: 'nexus', nexusRepositoryId: 'http://35.91.46.103:8081/repository/maven-releases/', packages: []
+               nexusPublisher nexusInstanceId: 'nexus', nexusRepositoryId: 'maven-releases', packages: []
             }
         }
     }
