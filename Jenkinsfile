@@ -81,7 +81,7 @@ pipeline {
             steps {
                 // Deploy to Nexus
                 sh 'pwd'
-                nexusArtifactUploader artifacts: [[artifactId: 'SimpleWebApplication', classifier: '', file: 'target/SimpleWebApplication.war', type: 'war']], credentialsId: 'nexus', groupId: 'com.maven.bt', nexusUrl: ' http://172.31.1.152:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'http://35.91.46.103:8081/repository/maven-releases/', version: '9.1.14'
+                nexusArtifactUploader artifacts: [[artifactId: 'SimpleWebApplication', classifier: '', file: 'target/SimpleWebApplication.war', type: 'war']], credentialsId: 'nexus', groupId: 'com.maven.bt', nexusUrl: ' http://172.31.1.152:8081', nexusVersion: 'nexus2', protocol: 'http', repository: 'http://35.91.46.103:8081/repository/maven-releases/', version: '9.1.14'
                 // nexusPublisher nexusInstanceId: 'nexus', nexusRepositoryId: 'maven-releases', packages: []
             }
         }
