@@ -80,7 +80,8 @@ pipeline {
         stage('Upload to Nexus') {
             steps {
                 // Deploy to Nexus
-               nexusPublisher nexusInstanceId: 'nexus', nexusRepositoryId: 'maven-releases', packages: []
+                nexusArtifactUploader artifacts: [[artifactId: 'SimpleWebApplication', classifier: '', file: '/target/*.war', type: 'war']], credentialsId: 'nexus', groupId: 'com.maven.bt', nexusUrl: ' http://172.31.1.152:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'http://35.91.46.103:8081/repository/maven-releases/', version: '9.1.14'
+                // nexusPublisher nexusInstanceId: 'nexus', nexusRepositoryId: 'maven-releases', packages: []
             }
         }
     }
