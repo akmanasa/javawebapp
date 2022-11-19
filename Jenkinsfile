@@ -81,7 +81,7 @@ pipeline {
             steps {
                 nexusPublisher nexusInstanceId: 'nexus', nexusRepositoryId: 'EED_Engg-Excellence-Devops-POC_maven_releases', packages: []
                //nexusPublisher nexusInstanceId: 'nexus', nexusRepositoryId: 'EED_Engg-Excellence-Devops-POC_maven_releases', packages: []
-                nexusArtifactUploader artifacts: [[artifactId: 'SimpleWebApplication', classifier: '', file: 'target/SimpleWebApplication.war', type: '.war']], credentialsId: 'nexus1', groupId: 'com.maven.bt', nexusUrl: '172.31.1.152:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-releases', version: '9.1.14'
+                nexusArtifactUploader artifacts: [[artifactId: 'SimpleWebApplication', classifier: '', file: '/target/*.war', type: 'war']], credentialsId: 'nexus', groupId: 'com.maven.bt', nexusUrl: '172.31.1.152:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-releases', version: '9.1.14'
             }
         }
     }
